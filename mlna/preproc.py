@@ -9,7 +9,7 @@ import re
 nlp = spacy.load("en_core_web_md")
 
 
-# optimized
+
 def find_sign_index (text):
     """
     Gets a string and returns the index of the first occurance of the signs that mark a sentence [. ! ?] in the string.
@@ -21,7 +21,7 @@ def find_sign_index (text):
         return None
 
 
-# optimized
+
 def apply_user_dict(text, user_dict):
     """
     Replaces the keys of a user-defined dictionary with their values in a long text.
@@ -32,7 +32,7 @@ def apply_user_dict(text, user_dict):
     return text
 
 
-# optimized
+
 def translate_long_text (text):
     """
     Translates long texts into English. This function was developed because the Translator model does not translate
@@ -62,7 +62,7 @@ def translate_long_text (text):
     return translation
 
 
-# optimized
+
 def sent_tokenize (eng_text, user_dict=None):
     """
     Sentence-tokenizes a text that is in English. I did not use NLTK's sentence tokenizer, becauase it cannot recognize
@@ -77,7 +77,7 @@ def sent_tokenize (eng_text, user_dict=None):
     return eng_sentences
 
 
-# optimized
+
 def trans_sent_tokenize (text, user_dict=None):
     """
     Translates the input text to English if it is not already in English. Then sentence-tokenizes the resulting
@@ -94,7 +94,7 @@ def trans_sent_tokenize (text, user_dict=None):
     return eng_sentences
 
 
-# optimized
+
 def extract_entities (text, text_id, entity_tags, user_ents=None, user_dict=None):
     """
     This function receives a whole text, translates it to English (if it is not already in English) and
@@ -156,7 +156,7 @@ def extract_entities (text, text_id, entity_tags, user_ents=None, user_dict=None
     return ent_dict
 
 
-# optimized
+
 def group_similar_ents(text_df, entity_tags, user_ents=None, user_dict=None, threshold=80):
     """
     Finds similar entities using fuzzy matching. It will be used in the user_dict function in the user_input module to

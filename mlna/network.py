@@ -5,7 +5,7 @@ import community.community_louvain as community_louvain
 from pyvis.network import Network
 
 
-# optimized
+
 def update_weights(df):
     """
     df is a pandas dataframe with the colums ['text_id', 'source', 'target'], storing network data. This function adds
@@ -30,7 +30,7 @@ def update_weights(df):
     return df
 
 
-# optimized
+
 def get_network_data (text_df, entity_tags, user_ents=None, user_dict=None):
     """
     text_df is a dataframe with at least the columns 'text_id' and 'full_text'. This function extrats the desired
@@ -66,7 +66,7 @@ def get_network_data (text_df, entity_tags, user_ents=None, user_dict=None):
     return network_df
 
 
-# optimized
+
 def detect_community (text_df, entity_tags, user_ents=None, user_dict=None, title='community_detection',\
     figsize=(1000, 700), bgcolor='black', font_color='white'):
     """
@@ -88,7 +88,7 @@ def detect_community (text_df, entity_tags, user_ents=None, user_dict=None, titl
     com_net.save_graph(f'{title}.html')
 
 
-# optimized
+
 def visualize_network (text_df, entity_tags, user_ents=None, user_dict=None, core=False, select_nodes=None, sources=None,\
     title='network_visualization', figsize=(1000, 700), bgcolor='black', font_color='white'):
     """
@@ -138,7 +138,7 @@ def visualize_network (text_df, entity_tags, user_ents=None, user_dict=None, cor
         net.save_graph(f'{title}.html')
 
 
-# optimized
+
 def filter_network_data (text_df, select_nodes, entity_tags, user_ents=None, user_dict=None, operator='OR'):
     """
     Applies a boolean mask to network_df and filters out only the edges with the nodes that the user has selected and

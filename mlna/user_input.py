@@ -3,7 +3,7 @@ from mlna.network import get_network_data
 from mlna.preproc import group_similar_ents
 
 
-# optimized
+
 def get_entities ():
     """
     Prompts the user to enter the entities they are looking for in the input texts. The entities stem form spaCy.
@@ -39,7 +39,7 @@ def get_entities ():
     return entity_tags
 
 
-# optimized
+
 def select_nodes (text_df, entity_tags, user_dict=None, user_ents=None):
     """
     Prompts the user to enter the names of the nodes they want to extract from the network data. These nodes can be
@@ -65,7 +65,7 @@ def select_nodes (text_df, entity_tags, user_dict=None, user_ents=None):
     return select_nodes
 
 
-# optimized
+
 def user_dict (text_df, entity_tags, user_ents=None, dict_path=None, threshold=80):
     """
     This function allows users to set a preferred spelling for proper names and convert all variations to this standard
