@@ -8,9 +8,5 @@ pandas == 2.2.2
 pyvis == 0.3.2
 rapidfuzz == 3.9.3 # MIT license
 regex
-spacy == 3.7.2 # MIT license
-
 setuptools
-os
-subprocess
-sys
+spacy == 3.7.2 # MIT license
