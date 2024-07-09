@@ -4,7 +4,7 @@ community == 1.0.0b1
 googletrans == 4.0.0-rc1
 langdetect == 1.0.9
 networkx == 3.3
-pandas == 2.2.2
+pandas
 pyvis == 0.3.2
 rapidfuzz == 3.9.3 # MIT license
 regex
