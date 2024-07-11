@@ -16,3 +16,10 @@ many words, it takes only the first word as a named entitiy and ignores the rest
 
 # Run the user_input.user_dict a few times to create standard spellings for different variations of the same entity name.
 # This way, the network visualizations will be more accurate.
+
+
+# to get info about where the virtual environment mlna_env is installed:
+poetry env info -p
+
+# make the virtual environment part of the project folder:
+poetry config virtualenvs.in-project true
