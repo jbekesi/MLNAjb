@@ -19,7 +19,9 @@ many words, it takes only the first word as a named entitiy and ignores the rest
 
 
 # to get info about where the virtual environment mlna_env is installed:
-poetry env info -p
+poetry install
+poetry env info -p (delete the)
+poetry config virtualenvs.in-project true
 
 # make the virtual environment part of the project folder:
 poetry config virtualenvs.in-project true
