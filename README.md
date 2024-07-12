@@ -4,6 +4,7 @@ You need an internet connection while using this package, so that the code can r
 use a VPN while using this package.
 
 # how to install
+## this is how to do it.
 pip install mlna
 
 # Necessary:
