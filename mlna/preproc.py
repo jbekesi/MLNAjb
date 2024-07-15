@@ -9,7 +9,6 @@ import re
 nlp = spacy.load("en_core_web_md")
 
 
-
 def find_sign_index (text):
     """
     Gets a string and returns the index of the first occurance of the signs that mark a sentence [. ! ?] in the string.

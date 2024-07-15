@@ -13,8 +13,9 @@ To install this package from Github, run the following command in your terminal:
 ```pip install git+https://github.com/Goli-SF/MLNA```
 
 # Usage
-You need an internet connection while using this package, so that the code can reach the API of Google Translate. Do not
-use a VPN while using this package.
+You need an internet connection while using this package, so that the code can reach the API of Google Translate for translating text from other languages to English. Please do not use a VPN while using this package, so that the connection to Google Translate's API is not interrupted.
+
+***
 
 python -m spacy download en_core_web_md
 

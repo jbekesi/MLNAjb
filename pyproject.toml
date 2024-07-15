@@ -19,7 +19,9 @@ regex = "^2024.4.28"
 setuptools = "^63.2.0"
 spacy = "^3.7.2"
 
-
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.scripts]
+post_install_spacy_model = "install_spacy_model:download_model"
