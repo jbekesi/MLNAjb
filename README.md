@@ -9,6 +9,7 @@ It is developed for researchers in the humanities who wish to consult multilingu
 
 # Installation
 To install this package from Github, run the following command in your terminal:
+
 ```pip install git+https://github.com/Goli-SF/MLNA```
 
 # Usage
