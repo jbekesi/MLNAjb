@@ -9,7 +9,7 @@ It is developed for researchers in the humanities who wish to consult multilingu
 
 # Installation
 To install this package from Github, run the following command in your terminal:
-pip install git+https://github.com/Goli-SF/MLNA
+```pip install git+https://github.com/Goli-SF/MLNA```
 
 # Usage
 You need an internet connection while using this package, so that the code can reach the API of Google Translate. Do not
