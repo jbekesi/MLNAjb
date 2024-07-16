@@ -9,6 +9,7 @@ To do so, the package enables you to visulaize network relations between words a
 
 # Table of Contents (Optional)
 
+
 # Installation
 To install this package from Github, run the following command in the terminal:
 
