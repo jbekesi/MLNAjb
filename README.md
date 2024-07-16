@@ -156,4 +156,4 @@ Thank you for considering contributing to this project! I very much welcome cont
 Thank you for your contributions!
 
 # License
-This package has a CC BY-NC 4.0 license. For more detail, see the README.md file. For the third-party licenses of the packages used for the development of MLNA, see the THIRD_PARTY_LICENSES.md file.
+This package has a CC BY-NC 4.0 license. For more detail, see the LICENSE.md file. For the third-party licenses of the packages used for the development of MLNA, see the THIRD_PARTY_LICENSES.md file.
