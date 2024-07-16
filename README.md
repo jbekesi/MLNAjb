@@ -25,23 +25,28 @@ I assume that the user of this package has already a number of machine readable 
 
 To do so, you as the user of MLNA can go through the following steps:
 
-1. **Import the modules:** After installing the package, import its modules into your code:
+1. **Import the modules**
+After installing the package, import its modules into your code:
 
 ```from mlna import user_input, network```
 
-2. **Prepare text data:** Organize all of the text documents that you have gathered in a pandas dataframe. The mandatory columns in the dataframe are 'text_id' and 'full_text'. The dataframe may contain as many other columns as you desire. I will call this dataframe 'text_df' in the following examples.
+2. **Prepare text data**
+Organize all of the text documents that you have gathered in a pandas dataframe. The mandatory columns in the dataframe are 'text_id' and 'full_text'. The dataframe may contain as many other columns as you desire. I will call this dataframe 'text_df' in the following examples.
 
-3. **Choose entities** Choose which entities in the texts that you have gathered are relevant to you, using the 'get_entities' function in the 'user_input' module:
+3. **Choose entities**
+Choose which entities in the texts that you have gathered are relevant to you, using the 'get_entities' function in the 'user_input' module:
 
 ```entity_tags= user_input.get_entities()```
 
 This function presents a list of entities that the spaCy package can recognize within the texts. It returns a list of entity tags that is stored in the 'entity_tags' variable in this example. These entity tags help you find keywords in the texts stored in 'text_df'. Using them, you can make sure that you get an overview of the content of each text.
 
-4. **Enter user-defined entities:** If there is a certain word that is not recognized as one of the entities you have selected, but you want it to be included in the text search and network visualization, you can store it in a different variable than 'entites' and use it later in the network visualizations. For example, if you are interested in texts dealing with the development of telegraph and telephone, you can store the word 'telegraph' in a variable like 'user_ents':
+4. **Enter user-defined entities**
+If there is a certain word that is not recognized as one of the entities you have selected, but you want it to be included in the text search and network visualization, you can store it in a different variable than 'entites' and use it later in the network visualizations. For example, if you are interested in texts dealing with the development of telegraph and telephone, you can store the word 'telegraph' in a variable like 'user_ents':
 
 ```user_ents=['telegraph', 'telephone']```
 
-5. **Create a dictionary:** In order to extract the entities and words selected by the user from multiligual texts, the MLNA package translates all of them into English. It opten happens that proper names in non-English languages are transliterated and therefore appear in different texts in different languages with different spellings. If this is the case, different spellings of the same proper name are recognized by the package as different names. This in turn leads to an invalid representation of network relations between these names and other entities and words selected by the user in the network graph. To correct this, you should run the 'user_dict' function from the 'user_input' module. This function does not only create a dictionary that can be used in your script, it also saves that dictionary as a pickled file onto your computer, in the directory of your code. This way, you can always load the dictionary back into your code and add more key-value pairs to it over time. If you are creating the dictionary from scratch, run:
+5. **Create a dictionary**
+In order to extract the entities and words selected by the user from multiligual texts, the MLNA package translates all of them into English. It opten happens that proper names in non-English languages are transliterated and therefore appear in different texts in different languages with different spellings. If this is the case, different spellings of the same proper name are recognized by the package as different names. This in turn leads to an invalid representation of network relations between these names and other entities and words selected by the user in the network graph. To correct this, you should run the 'user_dict' function from the 'user_input' module. This function does not only create a dictionary that can be used in your script, it also saves that dictionary as a pickled file onto your computer, in the directory of your code. This way, you can always load the dictionary back into your code and add more key-value pairs to it over time. If you are creating the dictionary from scratch, run:
 
 ```
 user_dict=user_input.user_dict(text_df, entity_tags, user_ents=None, dict_path=None, threshold=80)
@@ -57,7 +62,8 @@ Naser al Din Qajar --> Nasser-al-Din Shah
 
 Now imagine that the package has also detected 'Naser al Din' as an entitiy, but you have forgotten to pass is as one of the keys of the value 'Nasser-al-Din Shah' in the previous step. In this case, the dictionary only replaces the 'Naser' part of this name with 'Nasser-al-Din Shah', therefore turning the original entity into 'Nasser-al-Din Shah al Din' which makes no sense. If you spot such mistakes in the visualized network graph, run the dictionary again and add the key-value pair 'Nasser-al-Din Shah al Din': 'Nasser-al-Din Shah' to it. You can repeat this process as many times as necessary, making sure that you have unified the spellings of all the different variations of the same proper name.
 
-6. **Visualize communities:** If you want to view the communities that exist within the collection of entities from 'entitiy_tags' and words that you have previously stored in 'user_ents', run the 'detect_community' function from the 'network' module:
+6. **Visualize communities**
+If you want to view the communities that exist within the collection of entities from 'entitiy_tags' and words that you have previously stored in 'user_ents', run the 'detect_community' function from the 'network' module:
 
 ```
 network.detect_community (text_df, entity_tags, user_ents=None, user_dict=None, title='community_detection', figsize=(1000, 700), bgcolor='black', font_color='white')
@@ -69,7 +75,8 @@ Remember, the 'detect_community' function looks at all the texts you have stored
 
 If you notice wrong or double spellings of a certain word or proper name and want to change them, run the 'user_dict' function again and complement your personalized user dictionary.
 
-7. **Visualize network relations** If you wish to visualize network relations that exist within the collection of entities from 'entitiy_tags' and words that you have previously stored in 'user_ents', run the 'visualize_network' function:
+7. **Visualize network relations**
+If you wish to visualize network relations that exist within the collection of entities from 'entitiy_tags' and words that you have previously stored in 'user_ents', run the 'visualize_network' function:
 
 ```
 netowrk.visualize_network (text_df, entity_tags, user_ents=None, user_dict=None, core=False, select_nodes=None, sources=None, title='network_visualization', figsize=(1000, 700), bgcolor='black', font_color='white')
@@ -81,7 +88,8 @@ If you notice wrong or double spellings of a certain word or proper name and wan
 
 If you only wish to view the core of the network you have just visualized, set `core=True`.If you only wish to visualize a network consisting of a certain group of nodes, store these nodes as a list in `select_nodes`.If you only wish to see the network relations between your predefined entities and selected words in one of the texts from 'text_df', save the 'text_id's of these texts in `sources`.
 
-8. **Select relevant texts:** Having studied the network and community graphs, you have gained a general overview of the subjects and corelations that you could find in the collection of texts that you have gathered. Now is the time to figure out which edges and nodes (which relations and names) appear in which one of the texts in the collection. To do so, run the 'filter_network_data' function from the 'network' module:
+8. **Select relevant texts**
+Having studied the network and community graphs, you have gained a general overview of the subjects and corelations that you could find in the collection of texts that you have gathered. Now is the time to figure out which edges and nodes (which relations and names) appear in which one of the texts in the collection. To do so, run the 'filter_network_data' function from the 'network' module:
 
 ```
 filtered_df= network.filter_network_data (text_df, select_nodes, entity_tags, user_ents=None, user_dict=None, operator='OR')
