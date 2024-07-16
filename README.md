@@ -57,7 +57,9 @@ Now imagine that the package has also detected 'Naser al Din' as an entitiy, but
 
 6. If you want to view the communities that exist within the collection of entities from 'entitiy_tags' and words that you have previously stored in 'user_ents', run the 'detect_community' function from the 'network' module:
 
-```network.detect_community (text_df, entity_tags, user_ents=None, user_dict=None, title='community_detection', figsize=(1000, 700), bgcolor='black', font_color='white')```
+```
+network.detect_community (text_df, entity_tags, user_ents=None, user_dict=None, title='community_detection', figsize=(1000, 700), bgcolor='black', font_color='white')
+```
 
 This function returns a community visualization stored in your code's path as an .html file. Open this file, interact with the community visualization and see which relationships exist between differnet nodes consisiting of the extracted entities and your selected words.You can change the title of the .html file, its size and the colors of its fonds and background in the function.
 
@@ -67,7 +69,9 @@ If you notice wrong or double spellings of a certain word or proper name and wan
 
 7. If you wish to visualize network relations that exist within the collection of entities from 'entitiy_tags' and words that you have previously stored in 'user_ents', run the 'visualize_network' function:
 
-```netowrk.visualize_network (text_df, entity_tags, user_ents=None, user_dict=None, core=False, select_nodes=None, sources=None, title='network_visualization', figsize=(1000, 700), bgcolor='black', font_color='white')```
+```
+netowrk.visualize_network (text_df, entity_tags, user_ents=None, user_dict=None, core=False, select_nodes=None, sources=None, title='network_visualization', figsize=(1000, 700), bgcolor='black', font_color='white')
+```
 
 This function returns a network visualization stored in your code's path as an .html file. Open this file, interact with the network visualization and see which relationships exist between differnet nodes consisiting of the extracted entities and your selected words. The relationships (edges) displayed here represent the co-occurence of the nodes in one sentence in one of the texts in 'text_df'. You can change the title of the .html file, its size and the colors of its fonds and background in the function.
 
@@ -77,7 +81,9 @@ If you only wish to view the core of the network you have just visualized, set `
 
 8. Having studied the network and community graphs, you have gained a general overview of the subjects and corelations that you could find in the collection of texts that you have gathered. Now is the time to figure out which edges and nodes (which relations and names) appear in which one of the texts in the collection. To do so, run the 'filter_network_data' function from the 'network' module:
 
-```filtered_df= network.filter_network_data (text_df, select_nodes, entity_tags, user_ents=None, user_dict=None, operator='OR')```
+```
+filtered_df= network.filter_network_data (text_df, select_nodes, entity_tags, user_ents=None, user_dict=None, operator='OR')
+```
 
 The argument `select_nodes` stores a list of nodes that you are interested in and want to spot in 'text_df'. If you are interested in one or more nodes, set `operator=OR`. If you are only interested in one edge, namely in the cooccurance of two nodes only, `select_nodes` should contain only these two nodes and you should set `operator=AND`.
 
@@ -94,11 +100,11 @@ Thank you for considering contributing to this project! I very much welcome cont
 
 2. **Clone the Repository**
    - Clone your forked repository to your local machine using:
-     ```bash git clone https://github.com/Goli-SF/MLNA.git ```
+     ```git clone https://github.com/Goli-SF/MLNA.git ```
 
 3. **Create a Branch**
    - Create a new branch for your changes:
-     ```bash git checkout -b feature/your-feature-name```
+     ```git checkout -b feature/your-feature-name```
 
 4. **Make Changes**
    - Make your changes or add new features in your branch.
@@ -108,7 +114,8 @@ Thank you for considering contributing to this project! I very much welcome cont
 
 6. **Commit Your Changes**
    - Commit your changes with a clear and concise commit message:
-     ```bash git add .
+     ```
+     git add .
      git commit -m "Add a brief message describing your changes"
      ```
 
