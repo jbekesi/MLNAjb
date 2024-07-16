@@ -3,6 +3,7 @@ from mlna.network import get_network_data
 from mlna.preproc import group_similar_ents
 
 
+
 def get_entities ():
     """
     Prompts the user to enter the entities they are looking for in the input texts. The entities stem form spaCy.
