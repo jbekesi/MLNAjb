@@ -5,6 +5,7 @@ import community.community_louvain as community_louvain
 from pyvis.network import Network
 
 
+
 def update_weights(df):
     """
     df is a pandas dataframe with the colums ['text_id', 'source', 'target'], storing network data. This function adds
