@@ -2,12 +2,12 @@
 
 <!-- TOC -->
 
-- [Table of Contents Optional](#table-of-contents-optional)
 - [Project Title](#project-title)
 - [Description](#description)
 - [Installation](#installation)
 - [Usage](#usage)
 - [Contributing](#contributing)
+    - [1. Guidelines](#1-guidelines)
 - [License](#license)
 
 <!-- /TOC -->
