@@ -1,3 +1,17 @@
+# Table of Contents (Optional)
+
+<!-- TOC -->
+
+- [Table of Contents Optional](#table-of-contents-optional)
+- [Project Title](#project-title)
+- [Description](#description)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Contributing](#contributing)
+- [License](#license)
+
+<!-- /TOC -->
+
 # Project Title
 The MultiLingual Network Analysis Package (MLNA)
 
@@ -6,20 +20,6 @@ This project was funded by the Flex Funds of NFDI4Culture, one of the member con
 It is developed for researchers in the humanities who wish to consult multilingual digital documents for their research, the language of which documents they do not necessarily understand. It allows them to select relevant documents for their research topic from among large digital collections. The intention of developing this package was to integrate digital historical texts in non-European languages into European research and vice versa.
 
 To do so, the package enables you to visulaize network relations between words and entities that you choose to be extracted from the texts. These network visualizations in turn allow you to see which relations between certain keywords (people, places, technologies, dates, products, events, etc.) are mentioned in the texts that you have at your disposal. Having viewed these relations, you can filter out the texts that thematize a certain relation (an edge in the network graph) or contain a certain word (word in the network graph) to be read in future.
-
-# Table of Contents (Optional)
-
-<!-- TOC -->
-
-- [Project Title](#project-title)
-- [Description](#description)
-- [Table of Contents Optional](#table-of-contents-optional)
-- [Installation](#installation)
-- [Usage](#usage)
-- [Contributing](#contributing)
-- [License](#license)
-
-<!-- /TOC -->
 
 # Installation
 To install this package from Github, run the following command in the terminal:
