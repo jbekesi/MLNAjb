@@ -135,14 +135,13 @@ def visualize_network (text_df, entity_tags, user_ents=None, user_dict=None, cor
     if core:
         net.from_nx(nx.k_core(G))
         net.save_graph(f'{title}.html')
+        net.show(f'{title}.html')
     else:
         net.from_nx(G)
         net.save_graph(f'{title}.html')
+        net.show(f'{title}.html')
 
     html_content = net.generate_html(f'{title}.html')
-
-    # new code:
-    net.show(f'{title}.html')
 
     return html_content
 
