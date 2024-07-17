@@ -4,6 +4,8 @@ from mlna.preproc import extract_entities
 import community.community_louvain as community_louvain
 from pyvis.network import Network
 
+from IPython.display import display, HTML
+
 
 
 def update_weights(df):
@@ -132,17 +134,15 @@ def visualize_network (text_df, entity_tags, user_ents=None, user_dict=None, cor
 
     if core:
         net.from_nx(nx.k_core(G))
-        #net.save_graph(f'{title}.html')
+        net.save_graph(f'{title}.html')
     else:
         net.from_nx(G)
-        #net.save_graph(f'{title}.html')
+        net.save_graph(f'{title}.html')
 
-    # New code:
-    html_filename = f'{title}.html'
-    html_content = net.generate_html(html_filename)
+    html_content = net.generate_html(f'{title}.html')
 
-    with open(html_filename, 'w') as file:
-        file.write(html_content)
+    # new code:
+    display(HTML(html_content))
 
     return html_content
 

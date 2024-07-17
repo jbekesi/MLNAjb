@@ -7,9 +7,6 @@ from mlna import user_input, network
 APP_TITLE = 'MLNA'
 APP_SUB_TITLE = 'The MultiLingual Network Analysis package'
 
-
-
-
 def main():
 
     st.set_page_config(APP_TITLE)
