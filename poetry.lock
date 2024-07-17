@@ -488,7 +488,7 @@ certifi = "*"
 chardet = "==3.*"
 hstspreload = "*"
 httpcore = "==0.9.*"
-idna = "==2.*"
+idna = "==3.*"
 rfc3986 = ">=1.3,<2"
 sniffio = "*"
 
