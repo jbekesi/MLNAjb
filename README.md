@@ -83,7 +83,7 @@ Now imagine that the package has also detected 'Naser al Din' as an entitiy, but
 If you want to view the communities that exist within the collection of entities from 'entitiy_tags' and words that you have previously stored in 'user_ents', run the 'detect_community' function from the 'network' module:
 
 ```
-network.detect_community (text_df, entity_tags, user_ents=None, user_dict=None, title='community_detection', figsize=(1000, 700), bgcolor='black', font_color='white')
+com= network.detect_community (text_df, entity_tags, user_ents=None, user_dict=None, title='community_detection', figsize=(1000, 700), bgcolor='black', font_color='white')
 ```
 
 This function returns a community visualization stored in your code's path as an .html file. Open this file, interact with the community visualization and see which relationships exist between differnet nodes consisiting of the extracted entities and your selected words.You can change the title of the .html file, its size and the colors of its fonds and background in the function.
@@ -97,7 +97,7 @@ If you notice wrong or double spellings of a certain word or proper name and wan
 If you wish to visualize network relations that exist within the collection of entities from 'entitiy_tags' and words that you have previously stored in 'user_ents', run the 'visualize_network' function:
 
 ```
-netowrk.visualize_network (text_df, entity_tags, user_ents=None, user_dict=None, core=False, select_nodes=None, sources=None, title='network_visualization', figsize=(1000, 700), bgcolor='black', font_color='white')
+net= netowrk.visualize_network (text_df, entity_tags, user_ents=None, user_dict=None, core=False, select_nodes=None, sources=None, title='network_visualization', figsize=(1000, 700), bgcolor='black', font_color='white')
 ```
 
 This function returns a network visualization stored in your code's path as an .html file. Open this file, interact with the network visualization and see which relationships exist between differnet nodes consisiting of the extracted entities and your selected words. The relationships (edges) displayed here represent the co-occurence of the nodes in one sentence in one of the texts in 'text_df'. You can change the title of the .html file, its size and the colors of its fonds and background in the function.
