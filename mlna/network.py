@@ -142,7 +142,7 @@ def visualize_network (text_df, entity_tags, user_ents=None, user_dict=None, cor
     html_content = net.generate_html(f'{title}.html')
 
     # new code:
-    display(HTML(html_content))
+    net.show(f'{title}.html')
 
     return html_content
 
