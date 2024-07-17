@@ -1,4 +1,4 @@
-# Table of Contents (Optional)
+# Table of Contents
 
 <!-- TOC -->
 
