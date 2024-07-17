@@ -9,6 +9,17 @@ To do so, the package enables you to visulaize network relations between words a
 
 # Table of Contents (Optional)
 
+<!-- TOC -->
+
+- [Project Title](#project-title)
+- [Description](#description)
+- [Table of Contents Optional](#table-of-contents-optional)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Contributing](#contributing)
+- [License](#license)
+
+<!-- /TOC -->
 
 # Installation
 To install this package from Github, run the following command in the terminal:
