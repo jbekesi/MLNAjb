@@ -13,7 +13,7 @@ To do so, the package enables you to visulaize network relations between words a
 # Installation
 To install this package from Github, run the following command in the terminal:
 
-```pip install git+https://github.com/Goli-SF/MLNA```
+```pip install git+https://github.com/Goli-SF/MLNA.git```
 
 You need an internet connection while using MLNA, so that the code can reach the API of Google Translate for translating text from other languages to English. Please do not use a VPN while using this package, so that the connection to Google Translate's API is not interrupted.
 
