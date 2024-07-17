@@ -7,7 +7,6 @@
 - [Installation](#installation)
 - [Usage](#usage)
 - [Contributing](#contributing)
-    - [1. Guidelines](#1-guidelines)
 - [License](#license)
 
 <!-- /TOC -->
