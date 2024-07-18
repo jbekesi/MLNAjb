@@ -1,6 +1,7 @@
 import streamlit as st
 import pandas as pd
-from mlna import user_input, network
+import mlna.user_input as user_input
+import mlna.network as network
 
 
 
