@@ -1,13 +1,14 @@
 import streamlit as st
 import pandas as pd
+from mlna import network
 
-import sys
-import os
-current_dir = os.path.dirname(os.path.abspath(__file__))
-parent_dir = os.path.dirname(current_dir)
-project_dir = os.path.join(parent_dir, 'mlna')
-sys.path.append(project_dir)
-import user_input, preproc, network
+# import sys
+# import os
+# current_dir = os.path.dirname(os.path.abspath(__file__))
+# parent_dir = os.path.dirname(current_dir)
+# project_dir = os.path.join(parent_dir, 'mlna')
+# sys.path.append(project_dir)
+# import user_input, preproc, network
 
 
 
