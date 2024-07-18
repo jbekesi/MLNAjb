@@ -23,10 +23,13 @@ def main():
         st.write("Uploaded data frame:")
         st.dataframe(text_df)  # Use st.dataframe() for a more interactive display
 
-        html_content = network.visualize_network (text_df, ['PERSON'], user_ents=None, user_dict=None, core=False, select_nodes=None, sources=None,\
-        title='network_visualization', figsize=(1000, 700), bgcolor='black', font_color='white')
+        # html_content = network.visualize_network (text_df, ['PERSON'], user_ents=None, user_dict=None, core=True, select_nodes=None, sources=None,\
+        # title='network_visualization', figsize=(1000, 700), bgcolor='black', font_color='white')
+        # st.components.v1.html(html_content, height=600, width=600)
 
-        st.components.v1.html(html_content, height=600, width=800)
+        content= network.detect_community (text_df, ['PERSON', 'GPE'], user_ents=None, user_dict=None, title='community_detection',\
+        figsize=(800, 600), bgcolor='black', font_color='white')
+        st.components.v1.html(content, height=600, width=800)
 
 if __name__ == "__main__":
     main()

@@ -4,7 +4,7 @@ from mlna.preproc import extract_entities
 import community.community_louvain as community_louvain
 from pyvis.network import Network
 
-from IPython.display import display, HTML
+#from IPython.display import display, HTML
 
 
 
@@ -89,6 +89,11 @@ def detect_community (text_df, entity_tags, user_ents=None, user_dict=None, titl
     com_net.from_nx(G)
     com_net.save_graph(f'{title}.html')
 
+    html_content= com_net.generate_html()
+
+    return html_content
+
+
 
 
 def visualize_network (text_df, entity_tags, user_ents=None, user_dict=None, core=False, select_nodes=None, sources=None,\
@@ -139,7 +144,7 @@ def visualize_network (text_df, entity_tags, user_ents=None, user_dict=None, cor
         net.from_nx(G)
         net.save_graph(f'{title}.html')
 
-    html_content = net.generate_html(f'{title}.html')
+    html_content= net.generate_html()
 
     return html_content
 
