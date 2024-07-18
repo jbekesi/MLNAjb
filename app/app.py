@@ -1,17 +1,21 @@
 import streamlit as st
 import pandas as pd
-import mlna.user_input as user_input
-import mlna.network as network
+
+import sys
+import os
+current_dir = os.path.dirname(os.path.abspath(__file__))
+parent_dir = os.path.dirname(current_dir)
+project_dir = os.path.join(parent_dir, 'mlna')
+sys.path.append(project_dir)
+from mlna import user_input, network
 
 
-
-APP_TITLE = 'MLNA'
-APP_SUB_TITLE = 'The MultiLingual Network Analysis package'
 
 def main():
 
-    st.set_page_config(APP_TITLE)
-    st.markdown(f"##### {APP_SUB_TITLE}")
+    st.title ('MLNA')
+    st.write ('### The MultiLingual Network Analysis package')
+    st.link_button ('Visit the MLNA repo on Github.', url='https://github.com/Goli-SF/MLNA')
 
     # Prompt the user to upload a file
     uploaded_file = st.file_uploader("Upload a pickled data frame containing your texts:", type="pickle")
@@ -21,7 +25,7 @@ def main():
 
         # Display the DataFrame
         st.write("Uploaded data frame:")
-        st.dataframe(text_df)  # Use st.dataframe() for a more interactive display
+        st.dataframe(text_df)
 
         # html_content = network.visualize_network (text_df, ['PERSON'], user_ents=None, user_dict=None, core=True, select_nodes=None, sources=None,\
         # title='network_visualization', figsize=(1000, 700), bgcolor='black', font_color='white')
@@ -29,7 +33,7 @@ def main():
 
         content= network.detect_community (text_df, ['PERSON', 'GPE'], user_ents=None, user_dict=None, title='community_detection',\
         figsize=(800, 600), bgcolor='black', font_color='white')
-        st.components.v1.html(content, height=600, width=800)
+        st.components.v1.html(content, height=500, width=700)
 
 if __name__ == "__main__":
     main()
