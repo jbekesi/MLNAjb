@@ -1,6 +1,6 @@
 import networkx as nx
 import pandas as pd
-from mlna.preproc import extract_entities
+from preproc import extract_entities
 import community.community_louvain as community_louvain
 from pyvis.network import Network
 
