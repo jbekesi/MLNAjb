@@ -4,8 +4,6 @@ from mlna.preproc import extract_entities
 import community.community_louvain as community_louvain
 from pyvis.network import Network
 
-#from IPython.display import display, HTML
-
 
 
 def update_weights(df):
@@ -83,23 +81,17 @@ def detect_community (text_df, entity_tags, user_ents=None, user_dict=None, titl
         G[row['source']][row['target']]['weight'] = row['weight']
 
     communities= community_louvain.best_partition(G)
-
-    #new code:
     node_degree = dict(G.degree)
 
-    # Combine attributes into a single dictionary
-    combined_attributes = {}
+    combined_attributes= {}
     for node, community in communities.items():
-        combined_attributes[node] = {
+        combined_attributes[node]= {
             'group': community,
             'size': node_degree[node]
         }
 
     nx.set_node_attributes(G, combined_attributes)
-    #new code end
 
-
-    #nx.set_node_attributes(G, communities, 'group')
     com_net= Network(notebook=True, width=f'{figsize[0]}px', height=f'{figsize[1]}px',
                      bgcolor=bgcolor, font_color=font_color, cdn_resources='in_line')
     com_net.from_nx(G)
@@ -108,7 +100,6 @@ def detect_community (text_df, entity_tags, user_ents=None, user_dict=None, titl
     html_content= com_net.generate_html()
 
     return html_content
-
 
 
 
