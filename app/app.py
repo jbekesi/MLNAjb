@@ -7,7 +7,7 @@ current_dir = os.path.dirname(os.path.abspath(__file__))
 parent_dir = os.path.dirname(current_dir)
 project_dir = os.path.join(parent_dir, 'mlna')
 sys.path.append(project_dir)
-from mlna import user_input, network
+import user_input, network
 
 
 
