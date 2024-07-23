@@ -122,49 +122,7 @@ You can now select the texts displayed in 'filtered_df' and perform a close read
 
 # Contributing
 
-Thank you for considering contributing to this project! I very much welcome contributions from the community. Here are the steps to contribute:
-
-**1. Fork the Repository**
-   - Click the "Fork" button at the top right of this page to create a copy of this repository in your GitHub account.
-
-**2. Clone the Repository**
-   - Clone your forked repository to your local machine using:
-     ```git clone https://github.com/Goli-SF/MLNA.git ```
-
-**3. Create a Branch**
-   - Create a new branch for your changes:
-     ```git checkout -b feature/your-feature-name```
-
-**4. Make Changes**
-   - Make your changes or add new features in your branch.
-
-**5. Test Your Changes**
-   - Run the tests to ensure your changes do not break anything.
-
-**6. Commit Your Changes**
-   - Commit your changes with a clear and concise commit message:
-     ```
-     git add .
-     git commit -m "Add a brief message describing your changes"
-     ```
-
-**7. Push to Your Fork**
-   - Push your changes to your forked repository:
-     ```git push origin feature/your-feature-name```
-
-**8. Open a Pull Request**
-   - Go to the original repository on GitHub and click on the "Pull Request" button.
-   - Select your branch from the dropdown and click "Create Pull Request".
-   - Provide a detailed description of your changes and link any related issues.
-
-### Guidelines
-- Ensure your code adheres to the project's coding standards.
-- Write clear, concise commit messages.
-- Update documentation if necessary.
-- Write tests for new features or bug fixes.
-- Be respectful and considerate in your communications.
-
-Thank you for your contributions!
+Contributions, including bug fixes and new features, to the package are welcome. When contributing to this repository, please first discuss the change you wish to make via a GitHub issue or email with the maintainer of this repository before making a change.
 
 # License
 This package has a CC BY-NC 4.0 license. For more detail, see the LICENSE.md file. For the third-party licenses of the packages used for the development of MLNA, see the THIRD_PARTY_LICENSES.md file.
