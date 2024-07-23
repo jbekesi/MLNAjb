@@ -38,7 +38,7 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 
-## package:networkx
+## package: networkx
 3-clause BSD license
 
 Copyright (C) 2004-2018, NetworkX Developers
@@ -143,7 +143,7 @@ OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
 (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
 OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-## package:pyvis
+## package: pyvis
 BSD 3 Clause license
 
 Copyright (c) 2018, West Health Institute All rights reserved.
@@ -216,7 +216,7 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
 FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
 IN THE SOFTWARE.
 
-## package:spaCy
+## package: spaCy
 MIT License
 
 Copyright (C) 2016-2024 ExplosionAI GmbH, 2016 spaCy GmbH, 2015 Matthew Honnibal
