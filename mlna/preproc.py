@@ -36,7 +36,7 @@ def apply_user_dict(text, user_dict):
 def translate_long_text (text):
     """
     Translates long texts into English. This function was developed because the Translator model does not translate
-    texts that are longer than 1500 characters. So this function devides the input text into chunks of 1500
+    texts that are longer than 5000 characters. So this function devides the input text into chunks of 4000
     characters, translates them and puts them together again.
     """
     source= detect(text)
@@ -44,11 +44,11 @@ def translate_long_text (text):
     translation= ''
 
     while True:
-        if len(text) <= 1500:
+        if len(text) <= 4000:
             translation += translator.translate(text, src=source, dest="en").text
             break
         else:
-            fun_text= text[:1500] + "<placeholder>" + text[1500:]
+            fun_text= text[:4000] + "<placeholder>" + text[4000:]
             ph_index= fun_text.index("<placeholder>")
             rest= text[ph_index:]
             sign_index= find_sign_index(rest)
