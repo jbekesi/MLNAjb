@@ -1,6 +1,6 @@
 import pickle
-from network import get_network_data
-from preproc import group_similar_ents
+from mlna.network import get_network_data
+from mlna.preproc import group_similar_ents
 
 
 
