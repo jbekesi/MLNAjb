@@ -40,14 +40,14 @@ def get_entities ():
 
 
 
-def select_nodes (text_df, entity_tags, user_dict=None, user_ents=None):
+def select_nodes (text_df, entity_tags, user_ents=None, user_dict=None):
     """
     Prompts the user to enter the names of the nodes they want to extract from the network data. These nodes can be
     used to visualize a network consisting only of them or to filter relevant texts from the text_df based on the
     nodes/entities present in the texts. The node names entered by the user should match the entities recognized by
     the extract_entities function from the preproc module.
     """
-    network_df= get_network_data(text_df, entity_tags, user_dict, user_ents)
+    network_df= get_network_data(text_df, entity_tags, user_ents, user_dict)
     select_nodes=[]
     print ("Enter the names of as many nodes as you wish. Enter 'done' to exit.")
     print()
@@ -102,7 +102,7 @@ def user_dict (text_df, entity_tags, user_ents=None, dict_path=None, threshold=8
                 user_dict[variation]= constant
 
     elif fuzz_prompt.lower()=='y':
-        similar_groups= group_similar_ents (text_df, entity_tags, user_dict, user_ents, threshold)
+        similar_groups= group_similar_ents (text_df, entity_tags, user_ents, user_dict, threshold)
         for group in similar_groups:
             print()
             print("The following words seem to refer to the same entity:")
