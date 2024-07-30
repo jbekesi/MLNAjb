@@ -125,4 +125,6 @@ def user_dict (text_df, entity_tags, user_ents=None, dict_path=None, threshold=8
         with open(file_name, 'wb') as f:
             pickle.dump(user_dict, f)
 
-    return user_dict
+    filtered_dict = {key: value for key, value in user_dict.items() if key != value}
+
+    return filtered_dict
