@@ -28,7 +28,7 @@ def get_entities ():
         print (f"{key} : {options[key]}")
     print()
     while True:
-        choice = input("Enter your choice: ").upper()
+        choice = input("Enter your choice: ").strip().upper()
         if choice == 'DONE':
             break
         elif choice in options:
