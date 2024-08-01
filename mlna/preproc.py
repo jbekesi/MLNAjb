@@ -137,10 +137,10 @@ def extract_entities (text, text_id, entity_tags, user_ents=None, user_dict=None
                     source_index=i
                     break
             for word in user_ents:
-                word=word.lower()
-                if word in funny_sent_words:
+                #word=word.lower()
+                if word.lower() in funny_sent_words:
                     # word_index = index of each single word provided by the user within the original sentence:
-                    word_index=funny_sent_words.index(word)
+                    word_index=funny_sent_words.index(word.lower())
                     if word_index <= source_index:
                         sent_entities.insert(0, word)
                     else:
