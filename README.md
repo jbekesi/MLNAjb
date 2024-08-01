@@ -27,7 +27,7 @@ To install this package from Github, run the following command in the terminal:
 
 You need an internet connection while using MLNA, so that the code can reach the API of Google Translate for translating text from other languages to English. Please do not use a VPN while using this package, so that the connection to Google Translate's API is not interrupted.
 
-I am not sure yet if the package can automatically install the spaCy model that I am using in this package. If this is not the case, please download and install the model using the following code in the terminal:
+Also download and install the spacy model using the following code in the terminal:
 
 ```python -m spacy download en_core_web_md```
 
