@@ -110,7 +110,7 @@ def extract_entities (text, text_id, entity_tags, user_ents=None, user_dict=None
         sent_doc = nlp(sent)
         for ent in sent_doc.ents:
             if ent.label_ in entity_tags:
-                # doing some text cleaning:
+                # doing some text cleaning, but could be removed later:
                 entity = ent.text.strip()
                 if "'s" in entity:
                     cutoff = entity.index("'s")

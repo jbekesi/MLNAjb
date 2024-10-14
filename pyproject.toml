@@ -19,6 +19,9 @@ rapidfuzz = "^3.9.3"
 regex = "^2024.4.28"
 setuptools = "^70.3.0"
 spacy = "^3.7.2"
+openpyxl == "^3.1.5"
+thinc == "^8.2.5"
+cython == "^0.29.32"
 
 [build-system]
 requires = ["poetry-core"]

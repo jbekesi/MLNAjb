@@ -97,9 +97,11 @@ def detect_community (text_df, entity_tags, user_ents=None, user_dict=None, titl
     com_net.from_nx(G)
     com_net.save_graph(f'{title}.html')
 
-    html_content= com_net.generate_html()
+    #html_content= com_net.generate_html()
 
-    return html_content
+    print (f"The community graph was successfully saved to the current file's location as '{title}.html'.")
+
+    return None
 
 
 
@@ -151,9 +153,11 @@ def visualize_network (text_df, entity_tags, user_ents=None, user_dict=None, cor
         net.from_nx(G)
         net.save_graph(f'{title}.html')
 
-    html_content= net.generate_html()
+    print (f"The network graph was successfully saved to the current file's location as '{title}.html'.")
 
-    return html_content
+    #html_content= net.generate_html()
+
+    return None
 
 
 

@@ -22,7 +22,7 @@ def get_entities ():
               'DATE': 'Absolute or relative dates or periods.',
               'MONEY': 'Monetary values, including unit.'}
     entity_tags = []
-    print("Enter the entities you are looking for. Enter 'done' when finished.")
+    print("Enter the entities you are looking for in the texts. Press 'ENTER' to type the next entity. Enter 'done' when finished.")
     print()
     for key in options.keys():
         print (f"{key} : {options[key]}")
@@ -49,7 +49,7 @@ def select_nodes (text_df, entity_tags, user_ents=None, user_dict=None):
     """
     network_df= get_network_data(text_df, entity_tags, user_ents, user_dict)
     select_nodes=[]
-    print ("Enter the names of as many nodes as you wish. Enter 'done' to exit.")
+    print ("Enter the names of as many nodes as you wish. Press 'ENTER' to type the next name. Enter 'done' to exit.")
     print()
     while True:
         node= input("Enter the name of a node: ")
@@ -58,7 +58,7 @@ def select_nodes (text_df, entity_tags, user_ents=None, user_dict=None):
         elif node.lower() not in list(map(lambda x: x.lower(), network_df['source'])) or\
         node.lower() not in list(map(lambda x: x.lower(), network_df['target'])):
             print()
-            print ("Invalid input. Please enter a valid node or enter 'done' to exti.")
+            print ("Invalid input. Please enter a valid node or enter 'done' to exit.")
         else:
             select_nodes.append(node)
 
@@ -80,7 +80,7 @@ def user_dict (text_df, entity_tags, user_ents=None, dict_path=None, threshold=8
     else:
         user_dict={}
 
-    fuzz_prompt= input("Do you wish to see all similar entities and define a constant spelling for them? Enter 'y' for Yes and 'n' for No: ")
+    fuzz_prompt= input("Do you wish to see all similar entities and define a constant spelling for them? Enter 'y' for YES and 'n' for NO: ")
     print()
 
     if fuzz_prompt.lower()=='n':
@@ -117,14 +117,14 @@ def user_dict (text_df, entity_tags, user_ents=None, dict_path=None, threshold=8
                 for ent in group:
                     user_dict[ent]= unified_entity
 
+    filtered_dict = {key: value for key, value in user_dict.items() if key!=value and value!=''}
+
     if dict_path:
         with open(dict_path, 'wb') as f:
-            pickle.dump(user_dict, f)
+            pickle.dump(filtered_dict, f)
     else:
         file_name= 'user_dict.pickle'
         with open(file_name, 'wb') as f:
-            pickle.dump(user_dict, f)
-
-    filtered_dict = {key: value for key, value in user_dict.items() if key != value}
+            pickle.dump(filtered_dict, f)
 
     return filtered_dict
