@@ -55,7 +55,7 @@ def select_nodes (text_df, entity_tags, user_ents=None, user_dict=None):
         node= input("Enter the name of a node: ")
         if node.lower()=='done':
             break
-        elif node.lower() not in list(map(lambda x: x.lower(), network_df['source'])) or\
+        elif node.lower() not in list(map(lambda x: x.lower(), network_df['source'])) and\
             node.lower() not in list(map(lambda x: x.lower(), network_df['target'])):
             print()
             print ("Invalid input. Please enter a valid node name or enter 'done' to exit.")
