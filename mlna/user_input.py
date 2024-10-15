@@ -66,7 +66,7 @@ def select_nodes (text_df, entity_tags, user_ents=None, user_dict=None):
 
 
 
-def user_dict (text_df, entity_tags, user_ents=None, dict_path=None, threshold=80):
+def make_user_dict (text_df, entity_tags, user_ents=None, dict_path=None, threshold=80):
     """
     This function allows users to set a preferred spelling for proper names and convert all variations to this standard
     version. The dictionary is saved to the code's path, enabling it to be reloaded and updated at different stages of
