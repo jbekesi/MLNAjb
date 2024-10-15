@@ -69,8 +69,8 @@ def sent_tokenize (eng_text, user_dict=None):
     sentences when there is no space between the full stop at the end of the sentence and the next word.
     """
     if user_dict:
-        eng_text= apply_user_dict(eng_text, user_dict)
-        eng_text= apply_user_dict(eng_text, user_dict)
+        eng_text_1= apply_user_dict(eng_text, user_dict)
+        eng_text= apply_user_dict(eng_text_1, user_dict)
 
     eng_sentences= [sentence.strip() + '.' for sentence in re.split(r'[.!?]', eng_text) if sentence.strip()]
 
@@ -120,6 +120,7 @@ def extract_entities (text, text_id, entity_tags, user_ents=None, user_dict=None
                     entity = entity[:cutoff]
                 if "ʿ" in entity:
                     entity.replace("ʿ", "")
+                # end of text cleaning
                 if entity != "":
                     sent_entities.append(entity)
         seen = set()
@@ -137,7 +138,6 @@ def extract_entities (text, text_id, entity_tags, user_ents=None, user_dict=None
                     source_index=i
                     break
             for word in user_ents:
-                #word=word.lower()
                 if word.lower() in funny_sent_words:
                     # word_index = index of each single word provided by the user within the original sentence:
                     word_index=funny_sent_words.index(word.lower())
@@ -152,6 +152,7 @@ def extract_entities (text, text_id, entity_tags, user_ents=None, user_dict=None
                'sentences': eng_sentences,
                'entities': entities
                 }
+
 
     return ent_dict
 

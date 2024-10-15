@@ -56,9 +56,9 @@ def select_nodes (text_df, entity_tags, user_ents=None, user_dict=None):
         if node.lower()=='done':
             break
         elif node.lower() not in list(map(lambda x: x.lower(), network_df['source'])) or\
-        node.lower() not in list(map(lambda x: x.lower(), network_df['target'])):
+            node.lower() not in list(map(lambda x: x.lower(), network_df['target'])):
             print()
-            print ("Invalid input. Please enter a valid node or enter 'done' to exit.")
+            print ("Invalid input. Please enter a valid node name or enter 'done' to exit.")
         else:
             select_nodes.append(node)
 
