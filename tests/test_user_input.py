@@ -1,7 +1,10 @@
 import pandas as pd
 import unittest
 from unittest.mock import patch
-from ..mlna.user_input import get_entities, select_nodes, make_user_dict
+# import sys
+# import os
+# sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '../MLNA/mlna')))
+from mlna.user_input import get_entities, select_nodes, make_user_dict
 
 
 text_df= pd.read_pickle('test_df.pickle')
