@@ -7,8 +7,8 @@ from unittest.mock import patch
 from mlna.user_input import get_entities, select_nodes, make_user_dict
 
 
-text_df= pd.read_pickle('test_df.pickle')
-user_dict= pd.read_pickle('test_dict.pickle')
+text_df= pd.read_pickle('test_data/test_df.pickle')
+user_dict= pd.read_pickle('test_data/test_dict.pickle')
 entity_tags=['PERSON', 'GPE']
 user_ents=['telegraph']
 
