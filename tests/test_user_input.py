@@ -3,7 +3,7 @@ import unittest
 import pickle
 from unittest.mock import patch, mock_open, MagicMock
 from mlna.user_input import get_entities, select_nodes, make_user_dict
-from mlna.preproc import group_similar_ents
+#from mlna.preproc import group_similar_ents
 
 text_df= pd.read_pickle('test_data/test_df.pickle')
 user_dict= pd.read_pickle('test_data/test_dict.pickle')
