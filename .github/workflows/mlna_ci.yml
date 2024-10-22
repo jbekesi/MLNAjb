@@ -31,10 +31,6 @@ jobs:
           pip install --upgrade pip
           pip install poetry
 
-      - name: Install SpaCy model
-        run: |
-          python -m spacy download en_core_web_md
-
       # regenerate the poetry.lock file if necessary
       - name: Update poetry lock file
         run: |
@@ -43,6 +39,10 @@ jobs:
       - name: Install project dependencies
         run: |
           poetry install
+
+      - name: Install SpaCy model
+        run: |
+          python -m spacy download en_core_web_md
 
       - name: Run unit tests
         run: |
