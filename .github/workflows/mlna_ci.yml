@@ -42,7 +42,7 @@ jobs:
 
       - name: Install SpaCy model
         run: |
-          python -m spacy download en_core_web_md
+          poetry run python -m spacy download en_core_web_md
 
       - name: Run unit tests
         run: |
