@@ -33,7 +33,7 @@ jobs:
 
       - name: Install SpaCy model
         run: |
-          python install_spacy_model.py
+          python -m spacy download en_core_web_md
 
       # regenerate the poetry.lock file if necessary
       - name: Update poetry lock file
