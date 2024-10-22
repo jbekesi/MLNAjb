@@ -102,7 +102,7 @@ def make_user_dict (text_df, entity_tags, user_ents=None, dict_path=None, thresh
                 user_dict[variation]= constant
 
     elif fuzz_prompt.lower()=='y':
-        similar_groups= group_similar_ents (text_df, entity_tags, user_ents, user_dict, threshold)
+        similar_groups= group_similar_ents(text_df, entity_tags, user_ents, user_dict, threshold)
         for group in similar_groups:
             print()
             print("The following words seem to refer to the same entity:")
