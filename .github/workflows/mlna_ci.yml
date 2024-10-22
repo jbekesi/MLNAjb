@@ -31,7 +31,11 @@ jobs:
           pip install --upgrade pip
           pip install poetry
 
-      # Add this step to regenerate the poetry.lock file if necessary
+      - name: Install SpaCy model
+        run: |
+          python install_spacy_model.py
+
+      # regenerate the poetry.lock file if necessary
       - name: Update poetry lock file
         run: |
           poetry lock --no-update
