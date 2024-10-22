@@ -1,7 +1,6 @@
 import pandas as pd
 import pandas.testing as pdt
 import unittest
-import networkx as nx
 from unittest.mock import patch, MagicMock
 from mlna.network import update_weights, get_network_data, detect_community, visualize_network, filter_network_data
 

@@ -72,13 +72,11 @@ class TestMakeUserDict(unittest.TestCase):
 
     @patch('builtins.input', side_effect=['y', 'Britta', 'done'])
     @patch('builtins.open', new_callable=mock_open)
-    #@patch('mlna.preproc.group_similar_ents', return_value=[['Berita', 'Brita']])
     def test_fuzzy_entity_matching(self, mock_open, mock_input):
 
         test_dict={"text_id": ["123"],
                    "full_text": ["Berita was here. Brita was there."]}
         new_text_df = pd.DataFrame.from_dict(test_dict)
-        #entity_tags = None
         result = make_user_dict(new_text_df, entity_tags, dict_path=None, threshold=80)
         expected_dict = {'Berita': 'Britta', 'Brita': 'Britta'}
         self.assertEqual(result, expected_dict)
@@ -86,17 +84,11 @@ class TestMakeUserDict(unittest.TestCase):
         mock_open().write.assert_called_once()
         pickled_data = pickle.dumps(expected_dict)
         mock_open().write.assert_called_once_with(pickled_data)
-        #mock_group_similar_ents.assert_called_once_with(new_text_df, entity_tags, None, {}, 80)
+
 
     @patch('builtins.input', side_effect=['y', 's', 'done'])
     @patch('builtins.open', new_callable=mock_open)
-    #@patch('mlna.preproc.group_similar_ents', return_value=[['John Doe', 'Jon Do']])
     def test_skip_fuzzy_matching_group(self, mock_open, mock_input):
-
-        # test_dict={"text_id": ["123"],
-        #     "full_text": ["John Doe was here. Jon Do was there."]}
-        # text_df= pd.DataFrame.from_dict(test_dict)
-
         result = make_user_dict(text_df, entity_tags, dict_path=None, threshold=80)
         expected_dict = {}
         self.assertEqual(result, expected_dict)
@@ -104,7 +96,7 @@ class TestMakeUserDict(unittest.TestCase):
         mock_open().write.assert_called_once()
         pickled_data = pickle.dumps(expected_dict)
         mock_open().write.assert_called_once_with(pickled_data)
-        #mock_group_similar_ents.assert_called_once_with(text_df, entity_tags, None, {}, 80)
+
 
     @patch('builtins.input', side_effect=['n', 'John Doe', 'Jon Do', 'done'])
     @patch('builtins.open', new_callable=mock_open)
