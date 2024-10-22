@@ -60,9 +60,9 @@ class TestMakeUserDict(unittest.TestCase):
     @patch('builtins.input', side_effect=['n', 'John Doe', 'Jon Do', 'done'])
     @patch('builtins.open', new_callable=mock_open)
     def test_manual_entity_spelling(self, mock_open, mock_input):
-        text_df = None
+        empty_text_df = None
         entity_tags = None
-        result = make_user_dict(text_df, entity_tags, dict_path=None)
+        result = make_user_dict(empty_text_df, entity_tags, dict_path=None)
         expected_dict = {'Jon Do': 'John Doe'}
         self.assertEqual(result, expected_dict)
         mock_open.assert_called_once_with('user_dict.pickle', 'wb')
@@ -70,20 +70,23 @@ class TestMakeUserDict(unittest.TestCase):
         pickled_data = pickle.dumps(expected_dict)
         mock_open().write.assert_called_once_with(pickled_data)
 
-    @patch('builtins.input', side_effect=['y', 'John Doe', 'done'])
+    @patch('builtins.input', side_effect=['y', 'Britta', 'done'])
     @patch('builtins.open', new_callable=mock_open)
-    @patch('mlna.preproc.group_similar_ents', return_value=[['John Doe', 'Jon Do']])
-    def test_fuzzy_entity_matching(self, mock_group_similar_ents, mock_open, mock_input):
-        text_df = None
-        entity_tags = None
-        result = make_user_dict(text_df, entity_tags, dict_path=None, threshold=80)
-        expected_dict = {'John Doe': 'John Doe', 'Jon Do': 'John Doe'}
+    #@patch('mlna.preproc.group_similar_ents', return_value=[['Berita', 'Brita']])
+    def test_fuzzy_entity_matching(self, mock_open, mock_input):
+
+        test_dict={"text_id": ["123"],
+                   "full_text": ["Berita was here. Brita was there."]}
+        new_text_df = pd.DataFrame.from_dict(test_dict)
+        #entity_tags = None
+        result = make_user_dict(new_text_df, entity_tags, dict_path=None, threshold=80)
+        expected_dict = {'Berita': 'Britta', 'Brita': 'Britta'}
         self.assertEqual(result, expected_dict)
         mock_open.assert_called_once_with('user_dict.pickle', 'wb')
         mock_open().write.assert_called_once()
         pickled_data = pickle.dumps(expected_dict)
         mock_open().write.assert_called_once_with(pickled_data)
-        mock_group_similar_ents.assert_called_once_with(text_df, entity_tags, None, {}, 80)
+        #mock_group_similar_ents.assert_called_once_with(new_text_df, entity_tags, None, {}, 80)
 
     @patch('builtins.input', side_effect=['y', 's', 'done'])
     @patch('builtins.open', new_callable=mock_open)
@@ -111,7 +114,7 @@ class TestMakeUserDict(unittest.TestCase):
 
         with patch('pickle.load', return_value=existing_dict):
             result = make_user_dict(text_df, entity_tags, dict_path='existing_dict.pickle')
-            expected_dict=result
+            expected_dict=user_dict
             result['Jon Do']= 'John Doe'
             expected_dict['Jon Do']= 'John Doe'
             self.assertEqual(result, expected_dict)
