@@ -1,8 +1,5 @@
 import pandas as pd
 import unittest
-import pickle
-from unittest.mock import patch, mock_open, MagicMock
-#from mlna.user_input import get_entities, select_nodes, make_user_dict
 from mlna.preproc import apply_user_dict, translate_long_text, trans_sent_tokenize,\
     extract_entities, group_similar_ents
 
@@ -39,6 +36,7 @@ class TestTranslateLongtext(unittest.TestCase):
         self.assertEqual(result, expected_text)
 
 
+
 class TestTransSentTokenize(unittest.TestCase):
     def test_trans_sent_tokenize (self):
         expected_list= ['I went to Britta.',
@@ -46,6 +44,7 @@ class TestTransSentTokenize(unittest.TestCase):
                         'But Britta and her dog were already at home.']
         result= trans_sent_tokenize (test_dict['full_text'][0], new_dict)
         self.assertEqual(result, expected_list)
+
 
 
 class TestExtractEntities(unittest.TestCase):
@@ -66,6 +65,7 @@ class TestGroupSimilarEnts(unittest.TestCase):
         expected_list= [['Berita', 'Brita']]
         result= group_similar_ents(new_text_df, entity_tags, user_ents=['dog'], user_dict=None, threshold=80)
         self.assertEqual(result, expected_list)
+
 
 
 if __name__ == '__main__':
