@@ -2,7 +2,6 @@
 
 <!-- TOC -->
 
-- [Table of Contents](#table-of-contents)
 - [Project Title](#project-title)
 - [Description](#description)
 - [Installation](#installation)
