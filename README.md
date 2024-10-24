@@ -73,25 +73,27 @@ If there are certain words that are not recognized as one of the entities you ha
 
 5. **Create a dictionary**
 
-In order to extract the entities and words selected by the user from multiligual texts, the mlna package translates all of them into English. It often happens that entity names in non-English languages are transliterated and therefore appear in different texts in different languages with different spellings. If this is the case, different spellings of the same entity name are recognized by the package as different entities, although they all refer to the same entity. This in turn leads to an invalid representation of network relations between these names and other entities and words selected by the user in the network graph. To correct this, run the 'user_dict' function from the 'user_input' module. This function does not only create a dictionary that can be used in your script, it also saves that dictionary in a pickled file onto your computer, in the directory of your code. This way, you can always load the dictionary back into your code and add more key-value pairs to it over time. If you are creating the dictionary from scratch, run:
+In order to extract the entities and words selected by the user from multiligual texts, the mlna package translates all of them into English first. It often happens that proper names from non-English languages are transliterated in English texts and therefore appear with in varied forms in different texts. Also, depending on from which language they are translated to English, they might have different spellings. If this is the case, different spellings of the same entity are recognized by the package as different entities, although they all refer to the same entity. This in turn leads to an invalid representation of network relations between these names and other entities and words selected by the user in the network graph. To correct this, run the `user_dict` function from the `user_input` module. This function not only creates a dictionary that can be used in your script, it also saves that dictionary in a pickled file onto your computer, in the directory of your code. This way, you can always load the dictionary back into your code and add more key-value pairs to it over time. To create a dictionary, run:
 
 ```
 user_dict = user_input.user_dict(text_df, entity_tags, user_ents=None, dict_path=None, threshold=80)
 ```
 
-If you give the function a dict_path, it will load an existing dictionary and add more key-value-pairs to it. If not, it creates a dictionary from scratch. Either way, the function will prompt you to choose whether you want to see groups of words that could possibly refer to the same entity.
+If you have decided to create a list of self-defined entities that are not recognized by the spaCy mode, set `user_ents` in the code above equal to the `user_ents` list that you have created before.
 
-If you choose 'yes', you are shown these word groups and prompted to add a unified spelling for all of them. The package finds these groups using fuzzy matching. Change the value of 'threshold' in the function to change the accuracy of the fuzzy matching.
+If you give the function a `dict_path`, it will load an existing dictionary and add more key-value-pairs to it. If not, it creates a dictionary from scratch. Either way, the function will prompt you to choose whether you want to see groups of words that could possibly refer to the same entity.
 
-If you choose 'no', the function prompts you to do this manually by first entering all different spellings that you find to be refering to the same entity name and then entering a unified spelling for that entity name.
+* If you choose 'yes', you are shown these word groups and prompted to add a unified spelling for the words in each group. The package finds these groups using fuzzy matching. Change the value of `threshold` in the above code to change the accuracy of the fuzzy matching.
 
-Make sure that you run the 'user_dict' function a couple of times on the text dataframe. The reason is this: If you for example have the words 'Naser' and 'Naser al Din Qajar' and want to replace both of them with 'Nasser-al-Din Shah', the function will do the following replacements:
+* If you choose 'no', the function prompts you to create key-value-pairs manually by first entering all different spellings that you find to be refering to the same entity name and then entering a unified spelling for that entity name.
+
+Make sure that you run the `user_dict` function a couple of times on the text dataframe. The reason is this: If you for example have the words 'Naser' and 'Naser al Din Qajar' and want to replace both of them with 'Nasser-al-Din Shah', the function will do the following replacements:
 
 Naser --> Nasser-al-Din Shah
 
 Naser al Din Qajar --> Nasser-al-Din Shah
 
-Now imagine that the package has also detected 'Naser al Din' as an entitiy, but you have forgotten to pass is as one of the keys of the value 'Nasser-al-Din Shah' in the previous step. In this case, the dictionary only replaces the 'Naser' part of this name with 'Nasser-al-Din Shah', therefore turning the original entity into 'Nasser-al-Din Shah al Din' which makes no sense. If you spot such mistakes in the visualized network graph, run the dictionary again and add the key-value pair 'Nasser-al-Din Shah al Din': 'Nasser-al-Din Shah' to it. You can repeat this process as many times as necessary, making sure that you have unified the spellings of all the different variations of the same entity name.
+Now imagine that the package has also detected 'Naser al Din' as an entitiy, but you have forgotten to pass is as one of the keys of the value 'Nasser-al-Din Shah' in the previous step. In this case, the dictionary only replaces the 'Naser' part of this name with 'Nasser-al-Din Shah', therefore turning the original entity into 'Nasser-al-Din Shah al Din' which makes no sense. If you spot such mistakes in the visualized network graph, run the dictionary again and add the key-value pair `'Nasser-al-Din Shah al Din': 'Nasser-al-Din Shah'` to it. You can repeat this process as many times as necessary, making sure that you have unified the spellings of all the different variations of the same entity name.
 
 6. **Visualize communities**
 
