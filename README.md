@@ -39,7 +39,7 @@ Make sure to create a virtual environment in your working directory before insta
 You need an internet connection while using mlna, so that the code can reach the API of Google Translate for translating text from other languages to English. Please do not use a VPN while using this package, so that the connection to Google Translate's API is not interrupted.
 
 # Usage
-I assume that the user of this package has already a number of machine readable texts in different languages at their disposal, including ones the language of which they do not understand. This package is primarily meant for the user to select out the texts that are relevant to their research topic, without having to translate all of them into the languages that they know and reading them all. The user can first filter out those text documents that they need from among their collection, using the mlna package. Afterwards, they only have to translate the selected texts into a language that they understand and perform a close reading on them.
+I assume that the user of this package has already a number of machine readable texts in different languages at their disposal, including ones the language of which they do not understand. This package is primarily meant for the user to select out the texts that are relevant to their research topic, without having to translate all of them into the languages that they know and reading them all. Instead, the user can first filter out those text documents that they need from among their collection, using the mlna package. Afterwards, they only have to translate the selected texts into a language that they understand and perform a close reading on them.
 
 To do so, you as the user of mlna can go through the following steps:
 
@@ -55,7 +55,7 @@ the preproc module runs in the background of these two modules. If you plan to u
 
 2. **Prepare text data**
 
-Organize all of the text documents that you plan to work with in a table and convert the table to a pandas dataframe. The mandatory columns in the dataframe are 'text_id' and 'full_text'. The dataframe may contain as many other columns as you desire. I will call this dataframe 'text_df' in the following examples.
+Organize all of the text documents that you plan to work with in a table and convert the table to a pandas dataframe. The mandatory columns in the dataframe are `text_id` and `full_text`. The dataframe may contain as many other columns as you desire. I will call this dataframe `text_df` in the following examples.
 
 3. **Choose entities**
 
@@ -63,7 +63,7 @@ Choose which entities in the texts that you have gathered are relevant to you, u
 
 ```entity_tags = user_input.get_entities()```
 
-This function presents a list of entities that the spaCy package can recognize within the texts. It returns a list of entity tags that is stored in the 'entity_tags' variable in this example. These entity tags help you find keywords in the texts stored in 'text_df'. The entities that you choose help you get an overview of the content of each text.
+This function presents a list of entities to you that the spaCy package can recognize within the texts. Choose as many entities as you want by following the instructions that the function gives you. The function returns a list of entity tags stored in the `entity_tags` variable in this example. These entity tags help you find keywords in the texts stored in `text_df`. The entities that you choose help you get an overview of the content of each text.
 
 4. **Enter user-defined entities**
 
