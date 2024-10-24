@@ -2,6 +2,7 @@
 
 <!-- TOC -->
 
+- [Table of Contents](#table-of-contents)
 - [Project Title](#project-title)
 - [Description](#description)
 - [Installation](#installation)
@@ -18,9 +19,11 @@ The MultiLingual Network Analysis Package (mlna)
 This project was funded by the Flex Funds of NFDI4Culture, one of the member consortia of the National Research Data Infrastructure in Germany, in 2024.
 It is developed for researchers in the humanities who wish to consult multilingual digital documents for their research, the language of which documents they do not necessarily understand. It allows them to select relevant documents for their research topic from among large digital collections. The intention of developing this package was to integrate digital historical texts in non-European languages into European research and vice versa.
 
-To do so, the package enables you to visulaize network relations between words and entities that you choose to be extracted from the texts. These network visualizations in turn allow you to see which relations between certain keywords (people, places, technologies, dates, products, events, etc.) are mentioned in the texts that you have at your disposal. Having viewed these relations, you can filter out the texts that thematize a certain relation (an edge in the network graph) or contain a certain word (word in the network graph) and perform close reading on them.
+To achieve this goal, the package enables you to visulaize network relations between words and entities that you choose to be extracted from the texts. These network visualizations in turn allow you to see which relations between certain keywords (people, places, technologies, dates, products, events, etc.) are mentioned in the texts that you have at your disposal. Having viewed these relations, you can filter out the texts that thematize a certain relation (an edge in the network graph) or contain a certain word (word in the network graph) and perform close reading on them.
 
 Apart from the mentioned use-case in research, the package can also simply be used for network visualization or basic cleaning of text data.
+https:/
+If you are not familiar with Python and prefer to use the package with an interface, view the APP.txt file above or watch the [video tutorial](https://nfdi4culture.de/) **(placeholder)** of the app on youtube.
 
 # Installation
 In order to use mlna, you need the python version 3.10 or higher. To install the package from Github, run the following command in the terminal:
