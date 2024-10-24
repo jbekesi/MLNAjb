@@ -67,7 +67,7 @@ This function presents a list of entities to you that the spaCy package can reco
 
 4. **Enter user-defined entities**
 
-If there are certain words that are not recognized as one of the entities you have selected, but you want them to be included in text search and network visualization, you can store them in a different variable than 'entites' and use it later in network visualizations. For example, if you are interested in texts dealing with the development of telegraph and telephone, you can store the words 'telegraph' and 'telephone'!' in a variable like 'user_ents':
+If there are certain words that are not recognized as one of the entities you have selected, but you want them to be included in text search and network visualization, you can store them in a different variable than `entity_tags` and use it later in the network visualizations. For example, if you are interested in texts dealing with the development of telegraph and telephone, you can store the words 'telegraph' and 'telephone' in a variable called `user_ents`:
 
 ```user_ents = ['telegraph', 'telephone']```
 
