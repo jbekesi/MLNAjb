@@ -132,7 +132,15 @@ Having studied the network and community graphs, you have gained a general overv
 filtered_df = network.filter_network_data (text_df, select_nodes, entity_tags, user_ents=None, user_dict=None, operator='OR')
 ```
 
-The argument `select_nodes` stores a list of nodes that you are interested in and want to spot in `text_df`. If you are interested in one or more nodes, set `operator=OR`. If you are only interested in one edge, namely in the cooccurance of two nodes, `select_nodes` should contain only these two nodes and you should set `operator=AND`.
+The argument `select_nodes` stores a list of nodes that you are interested in and want to spot in `text_df`. If you want to make sure that the nodes you include in the `select_nodes` list actually exist in the network dataframe, generate the `select_nodes` list using a function of the same name from the `user_input` module:
+
+```
+select_nodes = user_input.select_nodes (text_df, entity_tags, user_ents=None, user_dict=None)
+```
+
+This function prompts you the enter the names of the nodes one by one and it will tell you if a certain node is not contained within your dataset.
+
+If you are interested in one or more nodes, set `operator=OR`. If you are only interested in one edge, namely in the cooccurance of two nodes, `select_nodes` should contain only these two nodes and you should set `operator=AND`.
 
 The output of this function is a dataframe containing columns from your original dataframe plus three extra columns containg network data: `source` and `target` which include one or both of your selected nodes (depending on whether you chose 'AND' or 'OR' as the operator) as well as `weight` which tells you how many times a certain cooccurance appears in each text.
 
