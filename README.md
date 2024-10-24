@@ -37,9 +37,11 @@ To install if from PyPI, run:
 
 Make sure to create a virtual environment in your working directory before installing mlna, in order to avoid dependency conflicts.
 
+# Usage
 You need an internet connection while using mlna, so that the code can reach the API of Google Translate for translating text from other languages to English. Please do not use a VPN while using this package, so that the connection to Google Translate's API is not interrupted.
 
-# Usage
+If you ever see the error message `TypeError: 'NoneType' object is not iterable` while using mlna, it means that the package has not been able to access Google Translate's API due to problems of internet connection or of the API itself. In this case, be patient and keep re-running your code until the error message disappears.
+
 I assume that the user of this package has already a number of machine readable texts in different languages at their disposal, including ones the language of which they do not understand. This package is primarily meant for the user to select out the texts that are relevant to their research topic, without having to translate all of them into the languages that they know and reading them all. Instead, the user can first filter out those text documents that they need from among their collection, using the mlna package. Afterwards, they only have to translate the selected texts into a language that they understand and perform a close reading on them.
 
 To do so, you as the user of mlna can go through the following steps:
