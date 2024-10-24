@@ -98,7 +98,7 @@ Now imagine that the package has also detected 'Naser al Din' as an entitiy, but
 
 6. **Visualize communities**
 
-If you want to view the communities that exist within the collection of entities from 'entitiy_tags' and words that you have previously stored in 'user_ents', run the 'detect_community' function from the 'network' module:
+If you want to view the communities that exist within the collection of entities from `entitiy_tags` and words that you have previously stored in `user_ents`, run the `detect_community` function from the `network` module:
 
 ```
 network.detect_community (text_df, entity_tags, user_ents=None, user_dict=None, title='community_detection', figsize=(1000, 700), bgcolor='black', font_color='white')
@@ -106,9 +106,9 @@ network.detect_community (text_df, entity_tags, user_ents=None, user_dict=None, 
 
 This function returns a community visualization stored in your code's path as a file named 'community_detection.html'. Open this file, interact with the community graph and see which relationships exist between differnet nodes consisiting of the extracted entities and the entities defined by the user. You can change the title of the .html file, its size, and the colors of its font and background in the function.
 
-Remember, the 'detect_community' function looks at all the texts you have stored in the 'text_df' dataframe.
+The `detect_community` function looks at all the texts you have stored in the 'text_df' dataframe.
 
-If you notice wrong or double spellings of a certain word or entity name and want to change them, run the 'user_dict' function again and complement your personalized user dictionary accordingly.
+If you notice wrong or double spellings of a certain word or entity name and want to change them, run the `user_dict` function again and complement your personalized user dictionary accordingly.
 
 7. **Visualize network relations**
 
@@ -122,7 +122,13 @@ This function returns a network graph stored in your code's path as `network_vis
 
 If you notice wrong or double spellings of a certain word or entity name and want to change them, run the `user_dict` function again and complement your personalized user dictionary accordingly.
 
-If you only wish to view the core of the network, set `core=True`.If you only wish to visualize a network consisting of a certain group of nodes, store these nodes as a list in `select_nodes`.If you only want to use certain texts from `text_df` for visualizing the network graph, store the `text_id`s of these texts in the `sources` list.
+If you only wish to view the core of the network, set `core=True`.If you only wish to visualize a network consisting of a certain group of nodes, store these nodes as a list in `select_nodes`. If you want to make sure that the nodes you include in the `select_nodes` list actually exist in the network dataframe, generate the `select_nodes` list using a function of the same name from the `user_input` module:
+
+```
+select_nodes = user_input.select_nodes (text_df, entity_tags, user_ents=None, user_dict=None)
+```
+
+If you only want to use certain texts from `text_df` for visualizing the network graph, store the `text_id`s of these texts in the `sources` list.
 
 8. **Select relevant texts**
 
