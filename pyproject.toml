@@ -3,6 +3,7 @@ name = "mlna"
 version = "0.1.0"
 description = "the MultiLingual Network Analysis package"
 authors = ["Golnaz Sarkar Farshi <golnaz.s.farshi@gmail.com>"]
+license = "CC BY-NC 4.0"
 readme = "README.md"
 
 [tool.poetry.dependencies]
