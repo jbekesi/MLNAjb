@@ -22,8 +22,8 @@ It is developed for researchers in the humanities who wish to consult multilingu
 To achieve this goal, the package enables you to visulaize network relations between words and entities that you choose to be extracted from the texts. These network visualizations in turn allow you to see which relations between certain keywords (people, places, technologies, dates, products, events, etc.) are mentioned in the texts that you have at your disposal. Having viewed these relations, you can filter out the texts that thematize a certain relation (an edge in the network graph) or contain a certain word (word in the network graph) and perform close reading on them.
 
 Apart from the mentioned use-case in research, the package can also simply be used for network visualization or basic cleaning of text data.
-https:/
-If you are not familiar with Python and prefer to use the package with an interface, view the APP.txt file above or watch the [video tutorial](https://nfdi4culture.de/) **(placeholder)** of the app on youtube.
+
+If you are not familiar with Python and prefer to use the package with an interface, watch the [video tutorial](https://nfdi4culture.de/) **(placeholder)** of the mlna-app on YouTube.
 
 # Installation
 In order to use mlna, you need the python version 3.10 or higher. To install the package from Github, run the following command in the terminal:
