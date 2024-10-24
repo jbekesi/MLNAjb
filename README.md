@@ -35,7 +35,7 @@ To install if from PyPI, run:
 
 ```pip install mlna```
 
-Make sure to create a virtual environment in your working directory before installing mlna, in order to avoid dependency conflicts.
+Make sure to create a virtual environment in your working directory before installing mlna, in order to avoid dependency conflicts. If you plan to use jupyter notebook, install it in your virtual environment before installing mlna to avoid dependency conflicts.
 
 # Usage
 You need an internet connection while using mlna, so that the code can reach the API of Google Translate for translating text from other languages to English. Please do not use a VPN while using this package, so that the connection to Google Translate's API is not interrupted.
