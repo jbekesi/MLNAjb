@@ -76,7 +76,7 @@ If there are certain words that are not recognized as one of the entities you ha
 In order to extract the entities and words selected by the user from multiligual texts, the mlna package translates all of them into English first. It often happens that proper names from non-English languages are transliterated in English texts and therefore appear with in varied forms in different texts. Also, depending on from which language they are translated to English, they might have different spellings. If this is the case, different spellings of the same entity are recognized by the package as different entities, although they all refer to the same entity. This in turn leads to an invalid representation of network relations between these names and other entities and words selected by the user in the network graph. To correct this, run the `user_dict` function from the `user_input` module. This function not only creates a dictionary that can be used in your script, it also saves that dictionary in a pickled file onto your computer, in the directory of your code. This way, you can always load the dictionary back into your code and add more key-value pairs to it over time. To create a dictionary, run:
 
 ```
-user_dict = user_input.user_dict(text_df, entity_tags, user_ents=None, dict_path=None, threshold=80)
+user_dict = user_input.user_dict (text_df, entity_tags, user_ents=None, dict_path=None, threshold=80)
 ```
 
 If you have decided to create a list of self-defined entities that are not recognized by the spaCy mode, set `user_ents` in the code above equal to the `user_ents` list that you have created before.
@@ -111,35 +111,35 @@ If you notice wrong or double spellings of a certain word or entity name and wan
 
 7. **Visualize network relations**
 
-If you wish to visualize network relations that exist within the collection of entities from 'entitiy_tags' and the words that you have stored in 'user_ents', run the 'visualize_network' function:
+If you wish to visualize network relations that exist within the collection of entities from `entitiy_tags` (and maybe aso the words that you have stored in `user_ents`), run the `visualize_network` function and change the values of `user_ents` and `user_dict` if they are not None:
 
 ```
 netowrk.visualize_network (text_df, entity_tags, user_ents=None, user_dict=None, core=False, select_nodes=None, sources=None, title='network_visualization', figsize=(1000, 700), bgcolor='black', font_color='white')
 ```
 
-This function returns a network graph stored in your code's path as 'network_visualization.html'. Open this file, interact with the network graph and see which relationships exist between differnet nodes consisiting of the extracted entities and your selected words. The relationships (edges) displayed here represent the co-occurence of the nodes in one sentence in the texts in 'text_df'. You can change the title of the .html file, its size, and the colors of its font and background in the function.
+This function returns a network graph stored in your code's path as `network_visualization.html`. Open this file, interact with the network graph and see which relationships exist between differnet nodes consisiting of the extracted entities and your selected words. Each relationship (edge) displayed here represent the co-occurence of its nodes in one sentence in the texts in `text_df`. You can change the title of the .html file, its size, and the colors of its font and background in the function.
 
-If you notice wrong or double spellings of a certain word or entity name and want to change them, run the 'user_dict' function again and complement your personalized user dictionary accordingly.
+If you notice wrong or double spellings of a certain word or entity name and want to change them, run the `user_dict` function again and complement your personalized user dictionary accordingly.
 
-If you only wish to view the core of the network you have just visualized, set `core=True`.If you only wish to visualize a network consisting of a certain group of nodes, store these nodes as a list in `select_nodes`.If you only wish to certain texts from 'text_df' for visualizing the network graph, store the 'text_id's of these texts in the `sources` list.
+If you only wish to view the core of the network, set `core=True`.If you only wish to visualize a network consisting of a certain group of nodes, store these nodes as a list in `select_nodes`.If you only want to use certain texts from `text_df` for visualizing the network graph, store the `text_id`s of these texts in the `sources` list.
 
 8. **Select relevant texts**
 
-Having studied the network and community graphs, you have gained a general overview of the subjects and corelations that you could find in the collection of gathered texts. Now is the time to figure out which edges and nodes (which relations and entities) appear in which one of the texts in the collection. To do so, run the 'filter_network_data' function from the 'network' module:
+Having studied the network and community graphs, you have gained a general overview of the subjects and corelations that you could find in the collection of texts. Now is the time to figure out which nodes and edges (which entities and which relations between them) appear in which ones of the texts in the collection. To do so, run the `filter_network_data` function from the `network` module:
 
 ```
 filtered_df = network.filter_network_data (text_df, select_nodes, entity_tags, user_ents=None, user_dict=None, operator='OR')
 ```
 
-The argument `select_nodes` stores a list of nodes that you are interested in and want to spot in 'text_df'. If you are interested in one or more nodes, set `operator=OR`. If you are only interested in one edge, namely in the cooccurance of two nodes, `select_nodes` should contain only these two nodes and you should set `operator=AND`.
+The argument `select_nodes` stores a list of nodes that you are interested in and want to spot in `text_df`. If you are interested in one or more nodes, set `operator=OR`. If you are only interested in one edge, namely in the cooccurance of two nodes, `select_nodes` should contain only these two nodes and you should set `operator=AND`.
 
-The output of this function is a dataframe containing rows from your original dataframe plus three extra rows, containg network data: 'source' and 'target' which include one or both of your selected nodes (depending on whether you chose 'AND' or 'OR') as well as 'weight' which tells you how many times a certain cooccurance appears in each text.
+The output of this function is a dataframe containing columns from your original dataframe plus three extra columns containg network data: `source` and `target` which include one or both of your selected nodes (depending on whether you chose 'AND' or 'OR' as the operator) as well as `weight` which tells you how many times a certain cooccurance appears in each text.
 
-You can now select the texts displayed in 'filtered_df' and perform a close reading of them, knowing that they very likely contain information that is relevant to your research topic.
+You can now select the texts displayed in `filtered_df` and perform a close reading of them, knowing that they very likely contain information that is relevant to your research.
 
 # Contributing
 
-Contributions, including bug fixes and new features, to the package are welcome. When contributing to this repository, please first discuss the change you wish to make via a GitHub issue or email with the maintainer of this repository before making a change.
+Contributions to the package, including bug fixes and new features, are welcome. When contributing to this repository, please first discuss the change you wish to make via a GitHub issue or email me before making a change.
 
 # License
-This package has a CC BY-NC 4.0 license. For more detail, see the LICENSE.md file. For the third-party licenses of the packages used for the development of mlna, see the THIRD_PARTY_LICENSES.md file.
+mlna has a CC BY-NC 4.0 license. For more detail, see the LICENSE.md file. For the third-party licenses of other packages used for the development of mlna, see the THIRD_PARTY_LICENSES.md file.
