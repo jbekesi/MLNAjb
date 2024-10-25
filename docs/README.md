@@ -22,7 +22,7 @@ To achieve this goal, the package enables you to visulaize network relations bet
 
 Apart from the mentioned use-case in research, the package can also simply be used for network visualization or basic cleaning of text data.
 
-Besides reading the following content, you can also watch this [video tutorial](https://nfdi4culture.de/) **(placeholder)** to learn how to use mlna. If you want to follow along the video tutorial, you can use the data and jupyter notebook stored in the [material_4_tutorial](https://github.com/Goli-SF/MLNA/tree/main/material_4_tutorial) folder above.
+Besides reading the following content, you can also watch this [video tutorial](https://nfdi4culture.de/) **(placeholder)** to learn how to use mlna. If you want to follow along the video tutorial, you can use the data and jupyter notebook stored in the [material4tutorial](https://github.com/Goli-SF/MLNA/tree/main/material4tutorial) folder.
 
 If you are not familiar with Python and prefer to use the package with an interface, watch the [video tutorial](https://nfdi4culture.de/) **(placeholder)** of the mlna-app on YouTube.
 
@@ -35,12 +35,12 @@ To install if from PyPI, run:
 
 ```pip install mlna```
 
-Make sure to create a virtual environment in your working directory before installing mlna, in order to avoid dependency conflicts.
+Make sure to create a virtual environment in your working directory before installing mlna, in order to avoid dependency conflicts. If you plan to use jupyter notebook, install it in your virtual environment before installing mlna to avoid dependency conflicts.
 
 # Usage
 You need an internet connection while using mlna, so that the code can reach the API of Google Translate for translating text from other languages to English. Please do not use a VPN while using this package, so that the connection to Google Translate's API is not interrupted.
 
-If you ever see the error message `TypeError: 'NoneType' object is not iterable` while using mlna, it means that the package has not been able to access Google Translate's API due to problems of internet connection or of the API itself. In this case, be patient and keep re-running your code until the error message disappears.
+If you ever see the error messages `TypeError: 'NoneType' object is not iterable` or `TypeError: the JSON object must be str, bytes or bytearray, not NoneType` while using mlna, it means that the package has not been able to access Google Translate's API due to problems of internet connection or of the API itself. In this case, be patient and keep re-running your code until the error message disappears.
 
 I assume that the user of this package has already a number of machine readable texts in different languages at their disposal, including ones the language of which they do not understand. This package is primarily meant for the user to select out the texts that are relevant to their research topic, without having to translate all of them into the languages that they know and reading them all. Instead, the user can first filter out those text documents that they need from among their collection, using the mlna package. Afterwards, they only have to translate the selected texts into a language that they understand and perform a close reading on them.
 
