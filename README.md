@@ -22,9 +22,9 @@ To achieve this goal, the package enables you to visulaize network relations bet
 
 Apart from the mentioned use-case in research, the package can also simply be used for network visualization or basic cleaning of text data.
 
-Besides reading the following content, you can also watch this [video tutorial](https://nfdi4culture.de/) **(placeholder)** to learn how to use mlna. If you want to follow along the video tutorial, you can use the data and jupyter notebook stored in the [material4tutorial](https://github.com/Goli-SF/MLNA/tree/main/material4tutorial) folder.
+Besides reading the following content, you can also watch this [video tutorial](https://nfdi4culture.de/) to learn how to use mlna. If you want to follow along the video tutorial, you can use the data and jupyter notebook stored in the [material4tutorial](https://github.com/Goli-SF/MLNA/tree/main/material4tutorial) folder.
 
-If you are not familiar with Python and prefer to use the package with an interface, watch the [video tutorial](https://nfdi4culture.de/) **(placeholder)** of the mlna-app on YouTube.
+If you are not familiar with Python and prefer to use the package with an interface, watch the [video tutorial](https://nfdi4culture.de/) of the mlna-app on YouTube.
 
 # Installation
 In order to use mlna, you need the python version 3.10 or higher. To install the package from Github, run the following command in the terminal:
