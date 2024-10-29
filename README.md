@@ -8,6 +8,7 @@
 - [Usage](#usage)
 - [Contributing](#contributing)
 - [License](#license)
+- [Words of thanks](#words-of-thanks)
 
 <!-- /TOC -->
 
@@ -160,3 +161,6 @@ Contributions to the package, including bug fixes and new features, are welcome.
 
 # License
 mlna has a CC BY-NC 4.0 license. For more detail, see the LICENSE.md file. For the third-party licenses of other packages used for the development of mlna, see the THIRD_PARTY_LICENSES.md file.
+
+# Words of thanks
+I hereby warmly thank Mariatta Wijaya for her insightful tips on CI and unit testing as well as Gaëtan Manchon for his helpful tips regarding the implementation of poetry.
