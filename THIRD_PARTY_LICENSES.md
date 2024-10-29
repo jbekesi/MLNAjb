@@ -247,15 +247,15 @@ Redistribution and use in source and binary forms, with or without
 modification, are permitted provided that the following conditions are
 met:
 
-    * Redistributions of source code must retain the above copyright
+  * Redistributions of source code must retain the above copyright
        notice, this list of conditions and the following disclaimer.
 
-    * Redistributions in binary form must reproduce the above
+  * Redistributions in binary form must reproduce the above
        copyright notice, this list of conditions and the following
        disclaimer in the documentation and/or other materials provided
        with the distribution.
 
-    * Neither the name of the NumPy Developers nor the names of any
+  * Neither the name of the NumPy Developers nor the names of any
        contributors may be used to endorse or promote products derived
        from this software without specific prior written permission.
 
@@ -315,9 +315,9 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 
 ## package: cython
-                                 Apache License
-                           Version 2.0, January 2004
-                        https://www.apache.org/licenses/
+Apache License
+Version 2.0, January 2004
+https://www.apache.org/licenses/
 
    TERMS AND CONDITIONS FOR USE, REPRODUCTION, AND DISTRIBUTION
 
