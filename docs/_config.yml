@@ -1,0 +1,20 @@
+title: "MLNA Documentation"
+markdown: kramdown
+theme: minima
+baseurl: "/docs"
+permalink: pretty
+include:
+  - docs
+
+defaults:
+  - scope:
+      path: "docs"
+      type: "md"
+    values:
+      layout: "page"
+
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+  hard_wrap: false
+  auto_ids: true
