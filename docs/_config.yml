@@ -1,14 +1,14 @@
 title: "MLNA Documentation"
 description: "A Python package for MultiLingual Network Analysis"
-baseurl: "/docs"
-url: "https://Goli-SF.github.io"
+# baseurl: "/docs"
+# url: "https://Goli-SF.github.io"
 
-remote_theme: "pmarsceill/just-the-docs"
+# remote_theme: "pmarsceill/just-the-docs"
 
-markdown: kramdown
-highlighter: rouge
+# markdown: kramdown
+# highlighter: rouge
 
-just_the_docs:
-  search_enabled: true
-  show_toc: true
-  toc_depth: 2
+# just_the_docs:
+#   search_enabled: true
+#   show_toc: true
+#   toc_depth: 2
