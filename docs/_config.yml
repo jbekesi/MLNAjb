@@ -1,20 +1,14 @@
 title: "MLNA Documentation"
-markdown: kramdown
-theme: minima
+description: "A Python package for MultiLingual Network Analysis"
 baseurl: "/docs"
-permalink: pretty
-include:
-  - docs
+url: "https://Goli-SF.github.io"
 
-defaults:
-  - scope:
-      path: "docs"
-      type: "md"
-    values:
-      layout: "page"
+remote_theme: "pmarsceill/just-the-docs"
 
-kramdown:
-  input: GFM
-  syntax_highlighter: rouge
-  hard_wrap: false
-  auto_ids: true
+markdown: kramdown
+highlighter: rouge
+
+just_the_docs:
+  search_enabled: true
+  show_toc: true
+  toc_depth: 2
