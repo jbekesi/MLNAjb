@@ -25,7 +25,7 @@ Apart from the mentioned use-case in research, the package can also simply be us
 
 Besides reading the following content, you can also watch this [video tutorial](https://youtu.be/O0ENQeATLXc) to learn how to use mlna. If you want to follow along the video tutorial, you can use the data and jupyter notebook stored in the [material4tutorial](https://github.com/Goli-SF/MLNA/tree/main/material4tutorial) folder.
 
-If you are not familiar with Python and prefer to use the package with an interface, watch the [video tutorial](https://nfdi4culture.de/) for the mlna-app on YouTube.
+If you are not familiar with Python and prefer to use the package with an interface, watch the [video tutorial](https://youtu.be/3c1C4b4D9BI) for the mlna-app on YouTube.
 
 # Installation
 In order to use mlna, you need the python version 3.10 or higher. To install the package from Github, run the following command in the terminal:
