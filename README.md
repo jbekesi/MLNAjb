@@ -29,16 +29,10 @@ If you are not familiar with Python and prefer to use the package with a user-fr
 # Installation
 Before installing mlna, make sure to create a virtual environment in your working directory to avoid dependency conflicts. If you plan to use Jupyter Notebook or Jupyter Lab, install them within your virtual environment first, before installing mlna, to prevent potential dependency conflicts.
 
-To use mlna, ensure you have Python version 3.10 or higher installed. To install the package from GitHub, run the following command in your terminal:
+To use mlna, ensure you have Python version 3.10 or higher installed. To install the package, run the following command in your terminal:
 
 ```
 pip install git+https://github.com/Goli-SF/MLNA.git
-```
-
-To install it from PyPI, run the following command:
-
-```
-pip install mlna
 ```
 
 # Usage
