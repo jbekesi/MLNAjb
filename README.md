@@ -31,11 +31,15 @@ Before installing mlna, make sure to create a virtual environment in your workin
 
 To use mlna, ensure you have Python version 3.10 or higher installed. To install the package from GitHub, run the following command in your terminal:
 
-```pip install git+https://github.com/Goli-SF/MLNA.git```
+```
+pip install git+https://github.com/Goli-SF/MLNA.git
+```
 
 To install it from PyPI, run the following command:
 
-```pip install mlna```
+```
+pip install mlna
+```
 
 # Usage
 An internet connection is required to use mlna, as the package needs access to the Google Translate API for translating texts from other languages to English. Please avoid using a VPN while using this package, as it may disrupt the connection to the Google Translate API.
