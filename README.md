@@ -22,7 +22,7 @@ To achieve this, the package enables users to visualize network relationships be
 
 Beyond its primary use case in research, the package can also be employed for general network visualization or basic text data cleaning.
 
-In addition to reading the following content, you can watch this [video tutorial](https://youtu.be/O0ENQeATLXc) on YouTube to learn how to use **mlna** in Python. If you'd like to follow along with the video tutorial, you can access the data and Jupyter Notebook provided in the [material4tutorial](https://github.com/Goli-SF/MLNA/tree/main/material4tutorial) folder.
+In addition to reading the following content, you can watch this [video tutorial](https://youtu.be/FuPgneZ5wGU) on YouTube to learn how to use **mlna** in Python. If you'd like to follow along with the video tutorial, you can access the data and Jupyter Notebook provided in the [material4tutorial](https://github.com/Goli-SF/MLNA/tree/main/material4tutorial) folder.
 
 If you are not familiar with Python and prefer to use the package with a user-friendly interface, you can watch the [video tutorial](https://youtu.be/3c1C4b4D9BI) for the **mlna-app** on YouTube.
 
