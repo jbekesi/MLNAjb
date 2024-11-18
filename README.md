@@ -50,11 +50,15 @@ To do this, follow these steps:
 
 After installing the package, import its modules into your code:
 
-```from mlna import user_input, network```
+```
+from mlna import user_input, network
+```
 
 The `preproc` module runs in the background of these two modules. If you plan to use it independently for other tasks, you can also run:
 
-```from mlna import preproc```
+```
+from mlna import preproc
+```
 
 **2. Prepare text data**
 
@@ -64,7 +68,9 @@ Organize all the text documents you plan to work with into a table and convert i
 
 Use the `get_entities` function in the `user_input` module to select the entities from your gathered texts that are relevant to your research:
 
-```entity_tags = user_input.get_entities()```
+```
+entity_tags = user_input.get_entities()
+```
 
 This function presents a list of entities that the spaCy package can recognize within your texts. You can choose as many entities as needed by following the prompts provided by the function. It returns a list of entity tags, which are stored in the `entity_tags` variable in this example. These entity tags will help you identify relevant keywords within the texts stored in `text_df`, giving you an overview of the content of each text.
 
@@ -72,7 +78,9 @@ This function presents a list of entities that the spaCy package can recognize w
 
 If there are certain words that are not recognized as part of the entities you've selected but you still want them to be included in text searches and network visualizations, you can store them in a separate variable (other than `entity_tags`) and use them later in the network visualizations. For example, if you're interested in texts related to the development of the telegraph and telephone, you can store the words 'telegraph' and 'telephone' in a variable called `user_ents`:
 
-```user_ents = ['telegraph', 'telephone']```
+```
+user_ents = ['telegraph', 'telephone']
+```
 
 **5. Create a dictionary**
 
